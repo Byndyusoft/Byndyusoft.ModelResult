@@ -19,10 +19,10 @@ jobs:
           dotnet-version: 3.1.x
           
       - name: build
-        run: dotnet build
+        run: dotnet build src
 
       - name: test
-        run: dotnet test
+        run: dotnet test src
         
       - name: publish
         uses: rohith/publish-nuget@v2

@@ -24,15 +24,25 @@
     public abstract class ModelResult<T> : IModelResult<T>
     {
         protected readonly ModelResult InnerResult;
+        private readonly T _result;
 
-        public T Result { get; }
+        public T Result
+        {
+            get
+            {
+                if (IsError())
+                    throw new InvalidOperationException("Error result has no result");
+
+                return _result;
+            }
+        }
 
         public ModelResultType Type => InnerResult.Type;
 
         protected ModelResult(ModelResult modelResult, T result = default(T))
         {
             InnerResult = modelResult ?? throw new ArgumentNullException(nameof(modelResult));
-            Result = result;
+            _result = result;
         }
 
         public bool IsOk() => InnerResult.IsOk();
