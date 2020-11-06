@@ -3,6 +3,7 @@
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
     <nullable>enable</nullable>
+    <PackageId>Byndyusoft.ModelResult.AspNetCore</PackageId>
   </PropertyGroup>
 
   <Import Project="../Common.props" />
