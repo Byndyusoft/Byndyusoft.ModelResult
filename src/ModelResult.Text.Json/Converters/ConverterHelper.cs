@@ -1,4 +1,4 @@
-﻿namespace ModelResult.Text.Json.Converters
+﻿namespace Byndyusoft.ModelResult.Converters
 {
     using System.Text.Json;
 

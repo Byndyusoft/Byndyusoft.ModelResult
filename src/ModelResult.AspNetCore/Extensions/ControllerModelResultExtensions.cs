@@ -1,4 +1,4 @@
-namespace ModelResult.AspNetCore.Extensions
+namespace Byndyusoft.ModelResult.Extensions
 {
     using Common;
     using Microsoft.AspNetCore.Mvc;

@@ -1,4 +1,4 @@
-﻿namespace ModelResult
+﻿namespace Byndyusoft.ModelResult
 {
 
     public class ErrorInfoItem

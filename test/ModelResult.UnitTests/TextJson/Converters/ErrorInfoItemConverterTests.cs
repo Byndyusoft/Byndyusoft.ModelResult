@@ -2,8 +2,9 @@
 {
     using System.Text.Json;
     using AutoFixture;
+    using Byndyusoft.ModelResult;
+    using Byndyusoft.ModelResult.Extensions;
     using NUnit.Framework;
-    using Text.Json.Extensions;
 
     [TestFixture]
     public class ErrorInfoItemConverterTests
