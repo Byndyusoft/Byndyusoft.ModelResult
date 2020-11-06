@@ -1,0 +1,87 @@
+﻿namespace ModelResult.ModelResults
+{
+    using System;
+
+    public abstract class ModelResult : IModelResult
+    {
+        public abstract ModelResultType Type { get; }
+
+        public ErrorModelResult AsError()
+        {
+            if (IsOk())
+                throw new InvalidOperationException("Result is not error");
+
+            return (ErrorModelResult)this;
+        }
+
+        public ErrorInfo GetError() => AsError().Error;
+
+        public bool IsOk() => Type == ModelResultType.Success;
+
+        public bool IsError() => Type != ModelResultType.Success;
+    }
+
+    public abstract class ModelResult<T> : IModelResult<T>
+    {
+        protected readonly ModelResult InnerResult;
+
+        public T Result { get; }
+
+        public ModelResultType Type => InnerResult.Type;
+
+        protected ModelResult(ModelResult modelResult, T result = default(T))
+        {
+            InnerResult = modelResult ?? throw new ArgumentNullException(nameof(modelResult));
+            Result = result;
+        }
+
+        public bool IsOk() => InnerResult.IsOk();
+
+        public bool IsError() => InnerResult.IsError();
+
+        public ModelResult AsSimple()
+        {
+            return InnerResult;
+        }
+
+        public ErrorModelResult<T> AsError()
+        {
+            if (IsOk())
+                throw new InvalidOperationException("Result is not error");
+
+            return (ErrorModelResult<T>) this;
+        }
+
+        public ErrorInfo GetError() => InnerResult.GetError();
+
+        public static implicit operator ModelResult<T>?(ModelResult? modelResult)
+        {
+            if (modelResult == null)
+                return null;
+
+            if (modelResult is OkModelResult okModelResult)
+                return okModelResult;
+
+            if (modelResult is ErrorModelResult errorModelResult)
+                return errorModelResult;
+
+            throw new NotImplementedException(
+                $"Conversion to generic from model result of type {modelResult.GetType().Name} is not implemented");
+        }
+
+        public static implicit operator ModelResult<T>(T result)
+        {
+            return new OkModelResult<T>(result);
+        }
+
+        public static implicit operator ModelResult<T>(OkModelResult modelResult)
+        {
+            return (OkModelResult<T>)modelResult;
+        }
+
+        public static implicit operator ModelResult<T>(ErrorModelResult modelResult)
+        {
+            return (ErrorModelResult<T>)modelResult;
+        }
+    }
+}
