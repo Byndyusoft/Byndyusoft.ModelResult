@@ -1,0 +1,10 @@
+<Project>
+  <PropertyGroup>
+    <Version>1.0.0</Version>
+    <RootNamespace>Byndyusoft.ModelResult</RootNamespace>
+    <Authors>Byndyusoft</Authors>
+    <PackageTags>Byndyusoft;ModelResult</PackageTags>
+    <RepositoryUrl>https://github.com/Byndyusoft/Byndyusoft.ModelResult</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+  </PropertyGroup>
+</Project>

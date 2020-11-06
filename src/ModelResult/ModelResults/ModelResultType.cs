@@ -1,4 +1,4 @@
-﻿namespace ModelResult.ModelResults
+﻿namespace Byndyusoft.ModelResult.ModelResults
 {
     public enum ModelResultType
     {

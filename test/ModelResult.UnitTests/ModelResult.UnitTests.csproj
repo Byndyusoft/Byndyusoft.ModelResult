@@ -1,8 +1,8 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
-
+    <nullable>enable</nullable>
     <IsPackable>false</IsPackable>
   </PropertyGroup>
 
@@ -14,7 +14,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\src\ModelResult.Text.Json\ModelResult.Text.Json.csproj" />
     <ProjectReference Include="..\..\src\ModelResult\ModelResult.csproj" />
   </ItemGroup>
 

@@ -1,4 +1,4 @@
-﻿namespace ModelResult.Text.Json.Converters
+﻿namespace Byndyusoft.ModelResult.Converters
 {
     using System;
     using System.Collections.Generic;
@@ -6,6 +6,7 @@
     using System.Text.Json;
     using System.Text.Json.Serialization;
     using Extensions;
+    using ModelResult;
 
     public class ErrorInfoConverter : JsonConverter<ErrorInfo?>
     {

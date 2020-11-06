@@ -1,4 +1,4 @@
-﻿namespace ModelResult.Text.Json.Extensions
+﻿namespace Byndyusoft.ModelResult.Extensions
 {
     using System.Linq;
 

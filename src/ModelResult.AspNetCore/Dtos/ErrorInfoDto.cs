@@ -1,8 +1,9 @@
-﻿namespace ModelResult.AspNetCore.Dtos
+﻿namespace Byndyusoft.ModelResult.Dtos
 {
     using System;
     using System.Diagnostics.CodeAnalysis;
     using System.Linq;
+    using ModelResult;
 
     public class ErrorInfoDto
     {

@@ -7,15 +7,6 @@ Result of domain model login similar to ActionResult
 dotnet add package Byndyusoft.ModelResult
 ```
 
-# ModelResult.Text.Json
-Converters for serialization via System.Test.Json
-
-## Installing
-
-```shell
-dotnet add package Byndyusoft.ModelResult.Test.Json
-```
-
 # ModelResult.AspNetCore
 Converter to ActionResult from ModelResult
 

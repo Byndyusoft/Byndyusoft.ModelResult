@@ -1,4 +1,4 @@
-﻿namespace ModelResult.Common
+﻿namespace Byndyusoft.ModelResult.Common
 {
     using ModelResults;
 
