@@ -10,11 +10,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{A630FFFE-9B9
 		src\Directory.Build.props = src\Directory.Build.props
 	EndProjectSection
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ModelResult.UnitTests", "tests\ModelResult.UnitTests\ModelResult.UnitTests.csproj", "{FE55A9D0-95A5-4937-8940-3EDE4F55FE83}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Byndyusoft.ModelResult.UnitTests", "tests\ModelResult.UnitTests\Byndyusoft.ModelResult.UnitTests.csproj", "{FE55A9D0-95A5-4937-8940-3EDE4F55FE83}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ModelResult", "src\ModelResult\ModelResult.csproj", "{C930F95E-77B1-4BB1-8AF9-BE99B99D2784}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Byndyusoft.ModelResult", "src\ModelResult\Byndyusoft.ModelResult.csproj", "{C930F95E-77B1-4BB1-8AF9-BE99B99D2784}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ModelResult.AspNetCore", "src\ModelResult.AspNetCore\ModelResult.AspNetCore.csproj", "{CCC814FF-8882-42EA-A781-48CC6213A0E1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Byndyusoft.ModelResult.AspNetCore", "src\ModelResult.AspNetCore\Byndyusoft.ModelResult.AspNetCore.csproj", "{CCC814FF-8882-42EA-A781-48CC6213A0E1}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{55CFEEA7-15A8-4BE8-88E6-EC0F35E2C124}"
 	ProjectSection(SolutionItems) = preProject

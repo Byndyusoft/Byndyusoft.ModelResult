@@ -14,8 +14,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\src\ModelResult.AspNetCore\ModelResult.AspNetCore.csproj" />
-    <ProjectReference Include="..\..\src\ModelResult\ModelResult.csproj" />
+    <ProjectReference Include="..\..\src\ModelResult.AspNetCore\Byndyusoft.ModelResult.AspNetCore.csproj" />
+    <ProjectReference Include="..\..\src\ModelResult\Byndyusoft.ModelResult.csproj" />
   </ItemGroup>
 
 </Project>
