@@ -12,7 +12,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\ModelResult\ModelResult.csproj" />
+    <ProjectReference Include="..\ModelResult\Byndyusoft.ModelResult.csproj" />
   </ItemGroup>
 
 </Project>

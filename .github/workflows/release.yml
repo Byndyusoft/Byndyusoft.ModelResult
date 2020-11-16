@@ -30,7 +30,7 @@ jobs:
       - name: publish
         uses: rohith/publish-nuget@v2
         with:
-          PROJECT_FILE_PATH: src/ModelResult/ModelResult.csproj
+          PROJECT_FILE_PATH: src/ModelResult/Byndyusoft.ModelResult.csproj
           VERSION_FILE_PATH: Directory.Build.props
           VERSION_REGEX: ^\s*<Version>(.*)<\/Version>\s*$
           TAG_COMMIT: false
@@ -40,7 +40,7 @@ jobs:
       - name: publish
         uses: rohith/publish-nuget@v2
         with:
-          PROJECT_FILE_PATH: src/ModelResult.AspNetCore/ModelResult.AspNetCore.csproj
+          PROJECT_FILE_PATH: src/ModelResult.AspNetCore/Byndyusoft.ModelResult.AspNetCore.csproj
           VERSION_FILE_PATH: Directory.Build.props
           VERSION_REGEX: ^\s*<Version>(.*)<\/Version>\s*$
           TAG_COMMIT: false

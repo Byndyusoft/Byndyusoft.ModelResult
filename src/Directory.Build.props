@@ -1,4 +1,7 @@
 <Project>
+
+  <Import Project="../Directory.Build.props" />
+
   <PropertyGroup>
     <PackageIcon>icon.png</PackageIcon>
     <nullable>enable</nullable>
