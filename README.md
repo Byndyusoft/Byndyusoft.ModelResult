@@ -1,5 +1,11 @@
-# ModelResult
+# Byndyusoft.ModelResult
 Result of domain model login similar to ActionResult
+
+| | | |
+| ------- | ------------ | --------- |
+| [**Byndyusoft.ModelResult**](https://www.nuget.org/packages/Byndyusoft.ModelResult/) | [![Nuget](https://img.shields.io/nuget/v/Byndyusoft.ModelResult.svg)](https://www.nuget.org/packages/Byndyusoft.ModelResult/) | [![Downloads](https://img.shields.io/nuget/dt/Byndyusoft.ModelResult.svg)](https://www.nuget.org/packages/Byndyusoft.ModelResult/) |
+| [**Byndyusoft.ModelResult.AspNetCore**](https://www.nuget.org/packages/Byndyusoft.ModelResult.AspNetCore/) | [![Nuget](https://img.shields.io/nuget/v/Byndyusoft.ModelResult.AspNetCore.svg)](https://www.nuget.org/packages/Byndyusoft.ModelResult.AspNetCore/) | [![Downloads](https://img.shields.io/nuget/dt/Byndyusoft.ModelResult.AspNetCore.svg)](https://www.nuget.org/packages/Byndyusoft.ModelResult.AspNetCore/) |
+
 
 ## Installing
 
@@ -38,9 +44,6 @@ Make sure you have installed all of the following prerequisites on your developm
 
 - unit-tests
 
-### example
-
-- example console application
 
 ## Package development lifecycle
 

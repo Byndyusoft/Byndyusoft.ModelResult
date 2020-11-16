@@ -4,9 +4,8 @@
     <TargetFramework>netcoreapp3.1</TargetFramework>
     <nullable>enable</nullable>
     <PackageId>Byndyusoft.ModelResult.AspNetCore</PackageId>
+    <RootNamespace>Byndyusoft.ModelResult.AspNetCore</RootNamespace>
   </PropertyGroup>
-
-  <Import Project="../Common.props" />
 
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.Mvc.Core" Version="2.2.5" />

@@ -1,11 +1,9 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
-  <Import Project="../Common.props" />
-
   <PropertyGroup>
     <TargetFramework>netstandard2.1</TargetFramework>
-    <nullable>enable</nullable>
     <PackageId>Byndyusoft.ModelResult</PackageId>
+    <RootNamespace>Byndyusoft.ModelResult</RootNamespace>
   </PropertyGroup>
 
 </Project>
