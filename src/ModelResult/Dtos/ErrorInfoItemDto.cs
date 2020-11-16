@@ -1,17 +1,9 @@
 ﻿namespace Byndyusoft.ModelResult.Dtos
 {
     using System;
-    using System.Diagnostics.CodeAnalysis;
-    using ModelResult;
 
     public class ErrorInfoItemDto
     {
-        [NotNull]
-        public string? PropertyName { get; set; }
-
-        [NotNull]
-        public string? Error { get; set; }
-
         public ErrorInfoItemDto()
         {
         }
@@ -21,6 +13,10 @@
             PropertyName = errorInfoItem.PropertyName;
             Error = errorInfoItem.Error;
         }
+
+        public string PropertyName { get; set; } = default!;
+
+        public string Error { get; set; } = default!;
 
         public ErrorInfoItem ToErrorInfoItem()
         {

@@ -1,20 +1,10 @@
 ﻿namespace Byndyusoft.ModelResult.Dtos
 {
     using System;
-    using System.Diagnostics.CodeAnalysis;
     using System.Linq;
-    using ModelResult;
 
     public class ErrorInfoDto
     {
-        [NotNull]
-        public string? Code { get; set; }
-
-        [NotNull]
-        public string? Message { get; set; }
-
-        public ErrorInfoItemDto[]? Items { get; set; }
-
         public ErrorInfoDto()
         {
         }
@@ -25,6 +15,12 @@
             Message = errorInfo.Message;
             Items = errorInfo.Items.Any() == false ? null : errorInfo.Items.Select(i => new ErrorInfoItemDto(i)).ToArray();
         }
+
+        public string Code { get; set; } = default!;
+
+        public string Message { get; set; } = default!;
+
+        public ErrorInfoItemDto[]? Items { get; set; }
 
         public ErrorInfo ToErrorInfo()
         {
