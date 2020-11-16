@@ -17,7 +17,7 @@ namespace Byndyusoft.ModelResult.Extensions
         public static ActionResult<T> ToActionResult<T>(this ModelResult<T> modelResult)
         {
             if (modelResult.IsOk())
-                return new OkObjectResult(modelResult.Result);
+                return modelResult.Result;
 
             return GetErrorResult(modelResult.AsSimple());
         }
