@@ -19,10 +19,20 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{55CFEEA7-15A8-4BE8-88E6-EC0F35E2C124}"
 	ProjectSection(SolutionItems) = preProject
 		.gitignore = .gitignore
+		CONTRIBUTING.md = CONTRIBUTING.md
 		Directory.Build.props = Directory.Build.props
 		icon.png = icon.png
-		LICENSE = LICENSE
+		LICENSE.txt = LICENSE.txt
 		README.md = README.md
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "github", "github", "{1A3EAFB9-D5A9-4E0D-8E3B-566810A5D84A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "workflows", "workflows", "{AB27ED0E-1C85-40D0-908A-AF5891818FA0}"
+	ProjectSection(SolutionItems) = preProject
+		.github\workflows\pull-request.yml = .github\workflows\pull-request.yml
+		.github\workflows\push.yml = .github\workflows\push.yml
+		.github\workflows\release.yml = .github\workflows\release.yml
 	EndProjectSection
 EndProject
 Global
@@ -51,6 +61,7 @@ Global
 		{FE55A9D0-95A5-4937-8940-3EDE4F55FE83} = {5AAB38FB-7F8A-4F9E-A492-81EA825E05DB}
 		{C930F95E-77B1-4BB1-8AF9-BE99B99D2784} = {A630FFFE-9B9A-4692-9E7E-12A05AF28397}
 		{CCC814FF-8882-42EA-A781-48CC6213A0E1} = {A630FFFE-9B9A-4692-9E7E-12A05AF28397}
+		{AB27ED0E-1C85-40D0-908A-AF5891818FA0} = {1A3EAFB9-D5A9-4E0D-8E3B-566810A5D84A}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {BE04068A-7CC6-4FDB-9687-9033748EA63E}
