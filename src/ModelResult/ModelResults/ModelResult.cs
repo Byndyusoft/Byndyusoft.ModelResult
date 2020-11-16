@@ -39,7 +39,7 @@
 
         public ModelResultType Type => InnerResult.Type;
 
-        protected ModelResult(ModelResult modelResult, T result = default(T))
+        protected ModelResult(ModelResult modelResult, T result = default)
         {
             InnerResult = modelResult ?? throw new ArgumentNullException(nameof(modelResult));
             _result = result;
