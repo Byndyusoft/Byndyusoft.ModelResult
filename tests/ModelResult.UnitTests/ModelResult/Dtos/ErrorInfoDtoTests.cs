@@ -1,9 +1,8 @@
-﻿namespace ModelResult.UnitTests.ModelResult.Dtos
+﻿namespace Byndyusoft.ModelResult.ModelResult.Dtos
 {
     using System.Diagnostics.CodeAnalysis;
     using System.Linq;
     using AutoFixture;
-    using Byndyusoft.ModelResult;
     using Byndyusoft.ModelResult.Dtos;
     using NUnit.Framework;
 

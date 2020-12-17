@@ -1,11 +1,9 @@
-﻿namespace ModelResult.UnitTests.AspNetCore.Extensions
+﻿namespace Byndyusoft.ModelResult.AspNetCore.Extensions
 {
     using AutoFixture;
-    using Byndyusoft.ModelResult;
-    using Byndyusoft.ModelResult.Common;
-    using Byndyusoft.ModelResult.Extensions;
-    using Byndyusoft.ModelResult.ModelResults;
+    using Common;
     using Microsoft.AspNetCore.Mvc;
+    using ModelResults;
     using NUnit.Framework;
 
     [TestFixture]

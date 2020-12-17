@@ -1,9 +1,9 @@
-﻿using Byndyusoft.ModelResult.Extensions;
-using Byndyusoft.ModelResult.ModelResults;
-using NUnit.Framework;
-
-namespace ModelResult.UnitTests.AspNetCore
+﻿namespace Byndyusoft.ModelResult.AspNetCore
 {
+    using Extensions;
+    using ModelResults;
+    using NUnit.Framework;
+
     public class ControllerModelResultExtensionsTests
     {
         [Test]
