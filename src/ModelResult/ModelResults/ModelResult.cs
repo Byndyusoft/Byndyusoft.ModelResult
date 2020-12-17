@@ -6,25 +6,31 @@
     {
         public abstract ModelResultType Type { get; }
 
+        public bool IsOk() => Type == ModelResultType.Success;
+
+        public bool IsError() => Type != ModelResultType.Success;
+
         public ErrorModelResult AsError()
         {
             if (IsOk())
                 throw new InvalidOperationException("Result is not error");
 
-            return (ErrorModelResult)this;
+            return (ErrorModelResult) this;
         }
 
         public ErrorInfo GetError() => AsError().Error;
-
-        public bool IsOk() => Type == ModelResultType.Success;
-
-        public bool IsError() => Type != ModelResultType.Success;
     }
 
     public abstract class ModelResult<T> : IModelResult<T>
     {
-        protected readonly ModelResult InnerResult;
         private readonly T _result;
+        protected readonly ModelResult InnerResult;
+
+        protected ModelResult(ModelResult modelResult, T result = default!)
+        {
+            InnerResult = modelResult ?? throw new ArgumentNullException(nameof(modelResult));
+            _result = result;
+        }
 
         public T Result
         {
@@ -38,12 +44,6 @@
         }
 
         public ModelResultType Type => InnerResult.Type;
-
-        protected ModelResult(ModelResult modelResult, T result = default)
-        {
-            InnerResult = modelResult ?? throw new ArgumentNullException(nameof(modelResult));
-            _result = result;
-        }
 
         public bool IsOk() => InnerResult.IsOk();
 
@@ -64,11 +64,8 @@
 
         public ErrorInfo GetError() => InnerResult.GetError();
 
-        public static implicit operator ModelResult<T>?(ModelResult? modelResult)
+        public static implicit operator ModelResult<T>(ModelResult modelResult)
         {
-            if (modelResult == null)
-                return null;
-
             if (modelResult is OkModelResult okModelResult)
                 return okModelResult;
 
@@ -86,12 +83,12 @@
 
         public static implicit operator ModelResult<T>(OkModelResult modelResult)
         {
-            return (OkModelResult<T>)modelResult;
+            return (OkModelResult<T>) modelResult;
         }
 
         public static implicit operator ModelResult<T>(ErrorModelResult modelResult)
         {
-            return (ErrorModelResult<T>)modelResult;
+            return (ErrorModelResult<T>) modelResult;
         }
     }
 }

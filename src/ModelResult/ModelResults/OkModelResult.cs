@@ -7,9 +7,13 @@
 
     public class OkModelResult<T> : ModelResult<T>
     {
-        private OkModelResult(OkModelResult modelResult) : base(modelResult) { }
+        private OkModelResult(OkModelResult modelResult) : base(modelResult)
+        {
+        }
 
-        public OkModelResult(T result) : base(new OkModelResult(), result) { }
+        public OkModelResult(T result) : base(new OkModelResult(), result)
+        {
+        }
 
         public static explicit operator OkModelResult<T>(OkModelResult result)
         {

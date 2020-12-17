@@ -1,7 +1,7 @@
-﻿namespace ModelResult.UnitTests.ModelResult.ModelResults
+﻿namespace Byndyusoft.ModelResult.ModelResult.ModelResults
 {
-    using AutoFixture;
     using System.Diagnostics.CodeAnalysis;
+    using AutoFixture;
     using Byndyusoft.ModelResult.ModelResults;
     using NUnit.Framework;
 
@@ -66,7 +66,7 @@
         public void TestGetResultError()
         {
             var result = new ErrorModelResult(_fixture.Create<string>(), _fixture.Create<string>());
-            var generalResult = (ErrorModelResult<int>)result;
+            var generalResult = (ErrorModelResult<int>) result;
 
             Assert.That(() => generalResult.Result, Throws.InvalidOperationException);
         }
