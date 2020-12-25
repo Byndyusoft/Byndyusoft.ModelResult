@@ -1,6 +1,7 @@
 ﻿namespace Byndyusoft.ModelResult
 {
     using System;
+    using System.Linq;
 
     public class ErrorInfo
     {
@@ -16,5 +17,11 @@
         public string Message { get; private set; }
 
         public ErrorInfoItem[] Items { get; private set; }
+
+        public override string ToString()
+        {
+            return
+                $"ErrorModelResult. Code - {Code}. Message - {Message}. Items - [ {string.Join(", ", Items.Select(i => i.ToString()))} ]";
+        }
     }
 }

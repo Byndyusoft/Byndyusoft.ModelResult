@@ -11,5 +11,10 @@
         public string PropertyName { get; private set; }
 
         public string Error { get; private set; }
+
+        public override string ToString()
+        {
+            return $"\"{PropertyName}\": {Error}";
+        }
     }
 }
