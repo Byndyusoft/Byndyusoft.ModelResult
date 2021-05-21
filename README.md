@@ -13,6 +13,47 @@ Result of domain model login similar to ActionResult
 dotnet add package Byndyusoft.ModelResult
 ```
 
+## Usage
+
+ModelResult can be used to return either "ok" or "error" value without explicit casting. Here are some usage examples:
+
+```csharp
+public ModelResult<int> GetId(SampleEntity entity)
+{
+    if (entity.HasId())
+        return entity.Id;
+
+    return new ErrorModelResult("Project.SampleEntity.NoId", "Entity does not contain Id");
+}
+
+public ModelResult ValidateEntity(SampleEntity entity)
+{
+    var errorInfoItems = new List<ErrorInfoItem>();
+
+    if (entity.HasId() == false)
+        errorInfoItems.Add(new ErrorInfoItem("Id", "Entity does not contain Id"));
+
+    if (errorInfoItems.Any())
+        return new ErrorModelResult("Project.SampleEntity.NotValid", "There are validation errors", errorInfoItems.ToArray());
+
+    return new OkModelResult();
+}
+
+public ModelResult<EntityInfoDto> GetEntityInfoDto(SampleEntity entity)
+{
+    ModelResult<int> idResult = GetId(entity);
+
+    if (idResult.IsError())
+    {
+        _logger.LogError("Error getting id: {@ErrorInfo}", idResult.GetError());
+        return idResult.AsSimple();
+    }
+
+    var entityInfoDto = new EntityInfoDto {Id = idResult.Result};
+    return entityInfoDto;
+}
+```
+
 # ModelResult.AspNetCore
 Converter to ActionResult from ModelResult
 
@@ -21,6 +62,20 @@ Converter to ActionResult from ModelResult
 ```shell
 dotnet add package Byndyusoft.ModelResult.AspNetCore
 ```
+
+## Usage
+
+```csharp
+[HttpGet("{id:long}")]
+public async Task<ActionResult<EntityInfoDto>> GetEntityInfoDto([FromRoute] long id,
+    [FromServices] IGetEntityInfoDtoUseCase useCase, CancellationToken cancellationToken)
+{
+    var result = await useCase.GetAsync(id, cancellationToken);
+    return result.ToActionResult();
+}
+```
+
+If `result` is "ok" result then action method will return message with 200 code and dto content. Otherwise if it is "error" result it is usually will be transformed to 400 code with error info that contains code, message and items. Current version has one exception: if error code is equal to `Byndyusoft.ModelResult.Common.CommonErrorCodes.NotFound` there will be 404 code without any content.
 
 # Contributing
 
