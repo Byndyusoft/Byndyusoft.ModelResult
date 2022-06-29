@@ -1,5 +1,5 @@
 # Byndyusoft.ModelResult
-Result of domain model login similar to ActionResult
+Result of domain model logic similar to ActionResult
 
 | | | |
 | ------- | ------------ | --------- |
