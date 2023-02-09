@@ -6,6 +6,8 @@
     {
         public abstract ModelResultType Type { get; }
 
+        public static OkModelResult Ok { get; } = new OkModelResult();
+
         public bool IsOk() => Type == ModelResultType.Success;
 
         public bool IsError() => Type != ModelResultType.Success;
