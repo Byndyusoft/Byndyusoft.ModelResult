@@ -5,6 +5,7 @@
     <PackageId>Byndyusoft.ModelResult</PackageId>
     <RootNamespace>Byndyusoft.ModelResult</RootNamespace>
     <PackageReadmeFile>README.md</PackageReadmeFile>
+    <PackageLicenseFile>LICENSE.txt</PackageLicenseFile>
   </PropertyGroup>
 
   <ItemGroup>

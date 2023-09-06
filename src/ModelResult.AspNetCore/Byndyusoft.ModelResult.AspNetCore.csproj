@@ -6,6 +6,7 @@
     <PackageId>Byndyusoft.ModelResult.AspNetCore</PackageId>
     <RootNamespace>Byndyusoft.ModelResult.AspNetCore</RootNamespace>
     <PackageReadmeFile>README.md</PackageReadmeFile>
+    <PackageLicenseFile>LICENSE.txt</PackageLicenseFile>
   </PropertyGroup>
 
   <ItemGroup>
