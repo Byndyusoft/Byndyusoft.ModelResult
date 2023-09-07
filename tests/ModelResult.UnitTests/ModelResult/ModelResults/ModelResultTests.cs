@@ -1,6 +1,5 @@
 ﻿namespace Byndyusoft.ModelResult.ModelResult.ModelResults
 {
-    using System.Diagnostics.CodeAnalysis;
     using AutoFixture;
     using Byndyusoft.ModelResult.ModelResults;
     using NUnit.Framework;
@@ -14,7 +13,7 @@
             _fixture = new Fixture();
         }
 
-        [NotNull] private Fixture? _fixture;
+        private Fixture _fixture = default!;
 
         [Test]
         public void TestIsOk()
