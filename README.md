@@ -1,5 +1,5 @@
 # Byndyusoft.ModelResult
-Result of domain model logic similar to ActionResult
+The result of domain logic, similar to ActionResult
 
 | | | |
 | ------- | ------------ | --------- |
@@ -15,7 +15,7 @@ dotnet add package Byndyusoft.ModelResult
 
 ## Usage
 
-ModelResult can be used to return either "ok" or "error" value without explicit casting. Here are some usage examples:
+ModelResult can be used to return either an "ok" value or an "error" value without explicit casting. Here are some usage examples:
 
 ```csharp
 public ModelResult<int> GetId(SampleEntity entity)
@@ -55,7 +55,7 @@ public ModelResult<EntityInfoDto> GetEntityInfoDto(SampleEntity entity)
 ```
 
 # ModelResult.AspNetCore
-Converter to ActionResult from ModelResult
+A converter of ModelResult to ActionResult
 
 ## Installing
 
@@ -75,11 +75,11 @@ public async Task<ActionResult<EntityInfoDto>> GetEntityInfoDto([FromRoute] long
 }
 ```
 
-If `result` is "ok" result then action method will return message with 200 code and dto content. Otherwise if it is "error" result it is usually will be transformed to 400 code with error info that contains code, message and items. Current version has one exception: if error code is equal to `Byndyusoft.ModelResult.Common.CommonErrorCodes.NotFound` there will be 404 code without any content.
+If `result` is an "ok" result then the action method will return a message with the 200 code and the contents of the DTO. Otherwise if it is "error" result it is usually will be transformed to 400 code with error info that contains code, message and items. The current version has one exception:  if an error code is equal to `Byndyusoft.ModelResult.Common.CommonErrorCodes.NotFound` there will be the 404 code without any content.
 
 # Contributing
 
-To contribute, you will need to setup your local environment, see [prerequisites](#prerequisites). For the contribution and workflow guide, see [package development lifecycle](#package-development-lifecycle).
+To contribute, you will need to setup your local environment, see [prerequisites](#prerequisites). For a contribution and workflow guide, see [package development lifecycle](#package-development-lifecycle).
 
 A detailed overview on how to contribute can be found in the [contributing guide](CONTRIBUTING.md).
 
@@ -88,24 +88,14 @@ A detailed overview on how to contribute can be found in the [contributing guide
 Make sure you have installed all of the following prerequisites on your development machine:
 
 - Git - [Download & Install Git](https://git-scm.com/downloads). OSX and Linux machines typically have this already installed.
-- .NET Core (version 3.1 or higher) - [Download & Install .NET Core](https://dotnet.microsoft.com/download/dotnet-core/3.1).
-
-## General folders layout
-
-### src
-- source code
-
-### tests
-
-- unit-tests
-
+- .NET Core (version 6.0 or higher) - [Download & Install .NET Core](https://dotnet.microsoft.com/en-us/download/dotnet/6.0).
 
 ## Package development lifecycle
 
 - Implement package logic in `src`
-- Add or addapt unit-tests (prefer before and simultaneously with coding) in `tests`
+- Add or adapt unit-tests in `tests`
 - Add or change the documentation as needed
-- Open pull request in the correct branch. Target the project's `master` branch
+- Open pull request for a correct branch. Target the project's `master` branch
 
 # Maintainers
 

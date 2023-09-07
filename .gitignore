@@ -141,3 +141,5 @@ ModelManifest.xml
 **/.vs/config/applicationhost.config
 src/.vs/**
 .vs/**
+
+.idea

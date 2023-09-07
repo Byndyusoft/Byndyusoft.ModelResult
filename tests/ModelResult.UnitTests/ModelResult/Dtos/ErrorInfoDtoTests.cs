@@ -1,6 +1,5 @@
 ﻿namespace Byndyusoft.ModelResult.ModelResult.Dtos
 {
-    using System.Diagnostics.CodeAnalysis;
     using System.Linq;
     using AutoFixture;
     using Byndyusoft.ModelResult.Dtos;
@@ -15,7 +14,7 @@
             _fixture = new Fixture();
         }
 
-        [NotNull] private Fixture? _fixture;
+        private Fixture _fixture = default!;
 
         [Test]
         public void TestConstructorWithoutItems()

@@ -5,6 +5,8 @@
     <nullable>enable</nullable>
     <PackageId>Byndyusoft.ModelResult.AspNetCore</PackageId>
     <RootNamespace>Byndyusoft.ModelResult.AspNetCore</RootNamespace>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <PackageLicenseFile>LICENSE.txt</PackageLicenseFile>
   </PropertyGroup>
 
   <ItemGroup>
@@ -15,4 +17,9 @@
     <ProjectReference Include="..\ModelResult\Byndyusoft.ModelResult.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <None Include="..\..\README.md" Pack="true" PackagePath="\" />
+    <None Include="..\..\LICENSE.txt" Pack="true" PackagePath="\"/>
+  </ItemGroup>
+  
 </Project>
