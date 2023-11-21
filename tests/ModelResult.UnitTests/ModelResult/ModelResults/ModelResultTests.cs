@@ -69,5 +69,34 @@
 
             Assert.That(() => generalResult.Result, Throws.InvalidOperationException);
         }
+
+        [Test]
+        public void TryGetResult_ResultIsOk_ReturnsTrue_AndSetsResult()
+        {
+            var resultValue = _fixture.Create<int>();
+            var result = (ModelResult<int>)new OkModelResult<int>(resultValue);
+
+            var resultIsRetrieved = result.TryGetResult(out var actualResultValue);
+            Assert.That(resultIsRetrieved, Is.True);
+            Assert.That(actualResultValue, Is.EqualTo(resultValue));
+        }
+
+        [Test]
+        public void TryGetResult_ResultIsError_ReturnsFalse()
+        {
+            var result = (ModelResult<int>)new ErrorModelResult(_fixture.Create<ErrorInfo>());
+
+            var resultIsRetrieved = result.TryGetResult(out _);
+            Assert.That(resultIsRetrieved, Is.False);
+        }
+
+        [Test]
+        public void Ok_FirstAndSecondCall_AreEqualByReference()
+        {
+            var firstModelResult = ModelResult.Ok;
+            var secondModelResult = ModelResult.Ok;
+
+            Assert.That(ReferenceEquals(firstModelResult, secondModelResult), Is.True);
+        }
     }
 }

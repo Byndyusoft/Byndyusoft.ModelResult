@@ -92,5 +92,17 @@
         {
             return (ErrorModelResult<T>) modelResult;
         }
+
+        public bool TryGetResult(out T resultValue)
+        {
+            if (IsOk())
+            {
+                resultValue = Result;
+                return true;
+            }
+
+            resultValue = default!;
+            return false;
+        }
     }
 }
