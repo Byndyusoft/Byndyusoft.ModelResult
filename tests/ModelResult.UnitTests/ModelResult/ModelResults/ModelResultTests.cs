@@ -89,5 +89,14 @@
             var resultIsRetrieved = result.TryGetResult(out _);
             Assert.That(resultIsRetrieved, Is.False);
         }
+
+        [Test]
+        public void Ok_FirstAndSecondCall_AreEqualByReference()
+        {
+            var firstModelResult = ModelResult.Ok;
+            var secondModelResult = ModelResult.Ok;
+
+            Assert.That(ReferenceEquals(firstModelResult, secondModelResult), Is.True);
+        }
     }
 }
