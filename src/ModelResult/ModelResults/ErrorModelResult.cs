@@ -19,7 +19,7 @@
 
         public ErrorInfoItem[] ErrorItems => Error.Items;
 
-        public override ModelResultType Type { get; } = ModelResultType.Error;
+        public override ModelResultType Type => ModelResultType.Error;
     }
 
     public class ErrorModelResult<T> : ModelResult<T>
