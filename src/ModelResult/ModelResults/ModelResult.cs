@@ -21,6 +21,11 @@
         }
 
         public ErrorInfo GetError() => AsError().Error;
+
+        public static implicit operator ModelResult(ErrorInfo errorInfo)
+        {
+            return new ErrorModelResult(errorInfo);
+        }
     }
 
     public abstract class ModelResult<T> : IModelResult<T>
@@ -91,6 +96,11 @@
         public static implicit operator ModelResult<T>(ErrorModelResult modelResult)
         {
             return (ErrorModelResult<T>) modelResult;
+        }
+
+        public static implicit operator ModelResult<T>(ErrorInfo errorInfo)
+        {
+            return new ErrorModelResult(errorInfo);
         }
 
         public bool TryGetResult(out T resultValue)
