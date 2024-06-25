@@ -27,6 +27,9 @@ namespace Byndyusoft.ModelResult.AspNetCore.Extensions
             if (modelResult.IsNotFound())
                 return new NotFoundResult();
 
+            if (modelResult.IsForbidden())
+                return new ForbidResult();
+
             return new BadRequestObjectResult(modelResult.GetError());
         }
     }
